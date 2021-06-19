@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
-import { MyFirstComponent } from './myfirst.component';
-import { MySecondComponent } from './my-second/my-second.component';
-import { MyThirdComponent } from './my-second/my-third/my-third.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    MyFirstComponent,
-    MySecondComponent,
-    MyThirdComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
