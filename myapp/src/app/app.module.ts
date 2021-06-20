@@ -13,6 +13,7 @@ import {MatInputModule} from '@angular/material/input';
   declarations: [
     AppComponent,
     StringInterpolationComponent
+    PropertyBindingComponent,
   ],
   imports: [
     BrowserModule,
