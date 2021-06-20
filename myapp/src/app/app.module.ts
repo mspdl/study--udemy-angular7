@@ -7,13 +7,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { StringInterpolationComponent } from './string-interpolation/string-interpolation.component';
 import {MatInputModule} from '@angular/material/input';
+import { PropertyBindingComponent } from './property-binding/property-binding.component';
+import { EventBindingComponent } from './event-binding/event-binding.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    StringInterpolationComponent
+    StringInterpolationComponent,
     PropertyBindingComponent,
+    EventBindingComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +25,8 @@ import {MatInputModule} from '@angular/material/input';
     MatButtonModule,
     MatIconModule,
     MatCardModule,
-    MatInputModule
+    MatInputModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
