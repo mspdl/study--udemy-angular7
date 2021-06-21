@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatCheckboxChange } from '@angular/material/checkbox';
 import { ProgressSpinnerMode } from '@angular/material/progress-spinner';
+import { MatSelectChange } from '@angular/material/select';
 
 @Component({
   selector: 'myapp-event-binding',
@@ -14,10 +16,12 @@ export class EventBindingComponent implements OnInit {
   buttonName = "My button"
   i = 0
   spinnerValue = 0
-  spinnerMode: ProgressSpinnerMode = 'determinate';
+  spinnerMode: ProgressSpinnerMode = 'determinate'
   btnEnable = true
-  showFirstSpinner = "none";
-  showSecondSpinner = "none";
+  showFirstSpinner = "none"
+  showSecondSpinner = "none"
+  selectDisabled = false
+  selectedOption = 'Volvo'
 
   constructor() { }
 
@@ -48,6 +52,14 @@ export class EventBindingComponent implements OnInit {
       this.spinnerMode = "determinate"
       this.showSecondSpinner = "none";
     }, 3000);
+  }
+
+  cbChange(event: MatCheckboxChange ){
+    this.selectDisabled = event.checked
+  }
+
+  carSelectionChange(event: MatSelectChange ){
+    this.selectedOption = event.value
   }
 
 }
