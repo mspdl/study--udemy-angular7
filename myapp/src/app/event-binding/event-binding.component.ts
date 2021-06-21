@@ -16,6 +16,8 @@ export class EventBindingComponent implements OnInit {
   spinnerValue = 0
   spinnerMode: ProgressSpinnerMode = 'determinate';
   btnEnable = true
+  showFirstSpinner = "none";
+  showSecondSpinner = "none";
 
   constructor() { }
 
@@ -27,6 +29,7 @@ export class EventBindingComponent implements OnInit {
   }
 
   increment() {
+    this.showFirstSpinner = "block";
     this.i++
     let rest = this.i % this.FULL_CIRLE
     this.spinnerValue = rest === 0 ? this.FULL_CIRLE : rest
@@ -37,11 +40,13 @@ export class EventBindingComponent implements OnInit {
   }
 
   disable() {
+    this.showSecondSpinner = "block";
     this.btnEnable = false
     this.spinnerMode = 'indeterminate';
     setTimeout(() => {
       this.btnEnable = true
       this.spinnerMode = "determinate"
+      this.showSecondSpinner = "none";
     }, 3000);
   }
 
