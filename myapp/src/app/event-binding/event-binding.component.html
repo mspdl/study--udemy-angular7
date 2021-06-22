@@ -8,6 +8,8 @@
   </mat-progress-spinner>
 </section>
 
+<hr>
+
 <section>
   <button mat-button color="primary" [disabled]="!btnEnable">My button 1</button>
   <button mat-button color="warn" [disabled]="!btnEnable">Mybutton 2</button>
@@ -19,6 +21,8 @@
     value="0">
   </mat-progress-spinner>
 </section>
+
+<hr>
 
 <section>
   <p>
@@ -45,6 +49,36 @@
       </mat-card-content>
       <mat-card-actions>
         <p>Selected option {{selectedOption}}</p>
+      </mat-card-actions>
+    </mat-card>
+  </p>
+</section>
+
+<hr>
+
+<section>
+  <p>
+    <mat-card>
+      <mat-card-content>
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="First name"
+            [value]="inputFirstName"
+            (input)="firstNameInputEvent($event)" />
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input
+          matInput
+          placeholder="Last name"
+          [value]="inputLastName"
+          (input)="lastNameInputEvent($event)" />
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <p>First name: {{inputFirstName}}</p>
+        <p>Last name: {{inputLastName}}</p>
       </mat-card-actions>
     </mat-card>
   </p>

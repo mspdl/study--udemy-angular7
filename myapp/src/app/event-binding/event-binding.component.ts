@@ -22,6 +22,8 @@ export class EventBindingComponent implements OnInit {
   showSecondSpinner = "none"
   selectDisabled = false
   selectedOption = 'Volvo'
+  inputFirstName = ""
+  inputLastName = ""
 
   constructor() { }
 
@@ -60,6 +62,14 @@ export class EventBindingComponent implements OnInit {
 
   carSelectionChange(event: MatSelectChange ){
     this.selectedOption = event.value
+  }
+
+  firstNameInputEvent(event: Event){
+    this.inputFirstName = (event.target as HTMLInputElement).value
+  }
+
+  lastNameInputEvent(event: Event){
+    this.inputLastName = (event.target as HTMLInputElement).value
   }
 
 }
