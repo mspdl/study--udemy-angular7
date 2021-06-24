@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { InputBindingComponent } from './input-binding/input-binding.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    InputBindingComponent
   ],
   imports: [
     BrowserModule,
