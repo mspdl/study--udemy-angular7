@@ -1,0 +1,24 @@
+
+<mat-card>
+  <mat-card-title>NgFor</mat-card-title>
+  <mat-card-content>
+    <p *ngFor="let name of names">{{name}}</p>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>NgFor with index</mat-card-title>
+  <mat-card-content>
+    <p *ngFor="let name of names; let i = index">{{i+1}}: {{name}}</p>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>NgFor with mat-list</mat-card-title>
+  <mat-card-content>
+    <mat-selection-list #selectedNames>
+      <mat-list-option *ngFor="let name of names">{{name}}</mat-list-option>
+    </mat-selection-list>
+  </mat-card-content>
+  <p>Options selected: {{selectedNames.selectedOptions.selected.length}}</p>
+</mat-card>
