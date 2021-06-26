@@ -7,6 +7,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,6 +19,7 @@ import { NgForComponent } from './ng-for/ng-for.component';
 import { NgIfComponent } from './ng-if/ng-if.component';
 import { SubNgIfComponent } from './ng-if/sub-ng-if/sub-ng-if.component';
 import { NgStyleComponent } from './ng-style/ng-style.component';
+import { NgSwitchComponent } from './ng-switch/ng-switch.component';
 
 
 @NgModule({
@@ -28,7 +30,8 @@ import { NgStyleComponent } from './ng-style/ng-style.component';
     NgIfComponent,
     SubNgIfComponent,
     NgForComponent,
-    NgForFormComponent
+    NgForFormComponent,
+    NgSwitchComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,8 @@ import { NgStyleComponent } from './ng-style/ng-style.component';
     MatInputModule,
     MatListModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
