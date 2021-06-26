@@ -7,3 +7,7 @@ mat-form-field {
   margin: 10px;
   width: 100%;
 }
+
+mat-list-item {
+  border-top: 1px solid;
+}
