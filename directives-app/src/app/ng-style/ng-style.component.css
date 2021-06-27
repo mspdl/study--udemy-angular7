@@ -1,0 +1,8 @@
+mat-radio-button {
+  display: flex;
+  margin: 5px 0;
+}
+
+mat-card {
+  margin: 20px;
+}
