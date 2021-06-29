@@ -10,7 +10,9 @@ export class ClientsComponent implements OnInit {
 
   firstName!: string;
   age!: number | undefined;
-  clients: Client[] = [];
+  clients: Client[] = [
+    {firstName: "Morgan", age: 31}
+  ];
 
   constructor() { }
 
@@ -24,6 +26,14 @@ export class ClientsComponent implements OnInit {
     })
     this.firstName = "";
     this.age = undefined;
+  }
+
+  updateClient(client: Client, index: number){
+    this.clients[index] = client;
+  }
+
+  removeClient(index: number){
+    this.clients.splice(index, 1);
   }
 
 }

@@ -14,4 +14,12 @@
   </mat-card-content>
 </mat-card>
 
-<p *ngFor="let c of clients">{{c.firstName}} - {{c.age}}</p>
+<hr *ngIf="clients.length > 0">
+
+<app-item-client
+  *ngFor="let c of clients; let index = index"
+  [client]="c"
+  (updateClient)="updateClient($event, index)"
+  (removeClient)="removeClient(index)"
+>
+</app-item-client>

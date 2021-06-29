@@ -13,6 +13,7 @@ import { EventComponent } from './event/event.component';
 import { ClientComponent } from './input-binding/client/client.component';
 import { InputBindingComponent } from './input-binding/input-binding.component';
 import { FormsModule } from '@angular/forms';
+import { ItemClientComponent } from './clients/item-client/item-client.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     ClientComponent,
     EventComponent,
     ChildItemComponent,
-    ClientsComponent
+    ClientsComponent,
+    ItemClientComponent
   ],
   imports: [
     BrowserModule,

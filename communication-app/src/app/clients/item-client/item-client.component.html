@@ -1,0 +1,31 @@
+<mat-card>
+  <mat-card-content>
+
+    <!-- Seção de edição -->
+    <section *ngIf="onEdit else showClient">
+      <mat-form-field>
+        <input matInput placeholder="First name" [(ngModel)]="firstName" />
+      </mat-form-field>
+      <mat-form-field>
+        <input type="number" matInput placeholder="Age" [(ngModel)]="age" />
+      </mat-form-field>
+      <button mat-mini-fab color="primary" (click)="save()">
+        <mat-icon>check</mat-icon>
+      </button>
+    </section>
+
+    <!-- Seção de exibição -->
+    <ng-template #showClient>
+      <section >
+        {{client.firstName}} - {{client.age}}
+        <button mat-icon-button color="accent" (click)="edit()">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="remove()">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </section>
+    </ng-template>
+
+  </mat-card-content>
+</mat-card>
