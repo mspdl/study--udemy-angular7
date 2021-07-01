@@ -17,6 +17,8 @@ import { ClientComponent } from './input-binding/client/client.component';
 import { InputBindingComponent } from './input-binding/input-binding.component';
 import { ParentChildComponent } from './parent-child/parent-child.component';
 import { TimerComponent } from './parent-child/timer/timer.component';
+import { OnChangesComponent } from './on-changes/on-changes.component';
+import { NameChangeComponent } from './on-changes/name-change/name-change.component';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { TimerComponent } from './parent-child/timer/timer.component';
     ClientsComponent,
     ItemClientComponent,
     ParentChildComponent,
-    TimerComponent
+    TimerComponent,
+    OnChangesComponent,
+    NameChangeComponent
   ],
   imports: [
     BrowserModule,
