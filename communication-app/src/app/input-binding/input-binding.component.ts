@@ -10,7 +10,7 @@ export class InputBindingComponent implements OnInit {
 
   @Input() firstName!: string;
   @Input() lastName!: string;
-  @Input() age!: number;
+  @Input() ageIn!: number;
 
   clients : Client[]
 
