@@ -18,6 +18,7 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
+
       <button mat-icon-button color="primary" (click)="save()">
         <mat-icon>check</mat-icon>
       </button>
@@ -33,10 +34,18 @@
           <mat-icon mat-list-icon>person</mat-icon>
           <p mat-line>
             <app-lifecycle-child
+              #child
               [name]="client.name"
               [age]="client.age"
               [food]="client.food"
             ></app-lifecycle-child>
+          </p>
+          <p mat-line>
+            <mat-chip-list>
+              <mat-chip *ngFor="let event of child.events" [color]="event.color" selected>
+                {{event.name}}
+              </mat-chip>
+            </mat-chip-list>
           </p>
           <button mat-icon-button color="warn">
             <mat-icon>delete</mat-icon>

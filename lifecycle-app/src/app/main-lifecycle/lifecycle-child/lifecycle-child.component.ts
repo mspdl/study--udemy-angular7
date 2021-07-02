@@ -1,5 +1,10 @@
 import { AfterContentInit, AfterViewInit, Component, Input, OnChanges, OnDestroy, OnInit } from '@angular/core';
 
+export interface LifecycleEvent {
+  id: number;
+  name: string;
+  color: string;
+}
 
 @Component({
   selector: 'app-lifecycle-child',
@@ -12,28 +17,54 @@ export class LifecycleChildComponent implements OnInit, OnDestroy, OnChanges, Af
   @Input() age!: number | undefined;
   @Input() food!: string;
 
-  constructor() { // First Call
-    console.log(this.name + " - constructor")
-   }
+  public events: LifecycleEvent[] = [];
+  nextEventId: number = 0;
 
-   ngOnChanges() { // Second Call
-    console.log(this.name + " - ngOnChanges")
+  colors: string[] = ["accent", "warn", "primary"];
+
+  constructor() { // First Call
+    console.log(this.name + " - constructor");
+    this.newEvent("constructor");
+  }
+
+  ngOnChanges() { // Second Call
+    console.log(this.name + " - ngOnChanges");
+    this.newEvent("ngOnChanges");
   }
 
   ngOnInit() { // Third Call
-    console.log(this.name + " - ngOnInit")
+    console.log(this.name + " - ngOnInit");
+    this.newEvent("ngOnInit");
   }
 
-  ngAfterContentInit(){ // Fourth Call
-    console.log(this.name + " - ngAfterContentInit")
+  ngAfterContentInit() { // Fourth Call
+    console.log(this.name + " - ngAfterContentInit");
+    this.newEvent("ngAfterContentInit");
   }
 
-  ngAfterViewInit(){ // Fifth Call
-    console.log(this.name + " - ngAfterViewInit")
+  ngAfterViewInit() { // Fifth Call
+    console.log(this.name + " - ngAfterViewInit");
+    this.newEvent("ngAfterViewInit");
   }
 
   ngOnDestroy() {
-    console.log(this.name + " - ngOnDestroy")
+    console.log(this.name + " - ngOnDestroy");
+    this.newEvent("ngOnDestroy");
+  }
+
+  newEvent(name: string) {
+    let id = this.nextEventId++;
+    this.events.push({
+      id: id,
+      name: name,
+      color: this.colors[id % this.colors.length]
+    })
+    setTimeout(() => {
+      let idx = this.events.findIndex((e) => e.id == id);
+      if (idx >= 0) {
+        this.events.splice(idx, 1);
+      }
+    }, 2000 + this.events.length * 2000);
   }
 
 }
