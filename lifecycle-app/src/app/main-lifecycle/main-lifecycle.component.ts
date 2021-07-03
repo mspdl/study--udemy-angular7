@@ -17,7 +17,7 @@ export class MainLifecycleComponent implements OnInit {
   age!: number | undefined;
   food!: string;
 
-  onEdit: boolean = false;
+  editedClientId: number = -1;
 
   constructor() { }
 
@@ -25,16 +25,32 @@ export class MainLifecycleComponent implements OnInit {
   }
 
   save() {
-    if (!this.onEdit) {
+    if (this.editedClientId < 0) {
       this.clients.push({
         name: this.name,
         age: this.age,
         food: this.food
       })
+    } else {
+      this.clients[this.editedClientId].name = this.name;
+      this.clients[this.editedClientId].age = this.age;
+      this.clients[this.editedClientId].food = this.food;
     }
     this.name = "";
     this.age = undefined;
     this.food = "";
+    this.editedClientId = -1;
+  }
+
+  edit(clientID: number) {
+    this.name = this.clients[clientID].name;
+    this.age = this.clients[clientID].age;
+    this.food = this.clients[clientID].food;
+    this.editedClientId = clientID;
+  }
+
+  delete(clientID: number) {
+    this.clients.splice(clientID, 1);
   }
 
 }
