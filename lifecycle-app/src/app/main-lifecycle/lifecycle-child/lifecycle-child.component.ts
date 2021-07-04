@@ -1,4 +1,4 @@
-import { AfterContentInit, AfterViewInit, Component, Input, OnChanges, OnDestroy, OnInit } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 
 export interface LifecycleEvent {
   id: number;
@@ -27,9 +27,19 @@ export class LifecycleChildComponent implements OnInit, OnDestroy, OnChanges, Af
     this.newEvent("constructor");
   }
 
-  ngOnChanges() { // Second Call
+  ngOnChanges(changes: SimpleChanges) { // Second Call
+    console.log(changes);
     console.log(this.name + " - ngOnChanges");
     this.newEvent("ngOnChanges");
+    if (changes['name']) {
+      console.log("new name = " + changes['name'].currentValue)
+      console.log("old name = " + changes['name'].previousValue)
+    }
+    for (let propName in changes) {
+      console.log("old value of changed prop " + propName + "= " + changes[propName].previousValue)
+      console.log("new value of changed prop " + propName + "= " + changes[propName].currentValue)
+      console.log("propName = " + propName)
+    }
   }
 
   ngOnInit() { // Third Call
