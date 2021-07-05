@@ -22,9 +22,14 @@ export class LifecycleChildComponent implements OnInit, OnDestroy, OnChanges, Af
 
   colors: string[] = ["accent", "warn", "primary"];
 
+  intervalRef;
+
   constructor() { // First Call
     console.log(this.name + " - constructor");
     this.newEvent("constructor");
+    this.intervalRef = setInterval(()=>{
+      console.log("interval")
+    }, 2000)
   }
 
   ngOnChanges(changes: SimpleChanges) { // Second Call
@@ -56,12 +61,15 @@ export class LifecycleChildComponent implements OnInit, OnDestroy, OnChanges, Af
 
   ngAfterViewInit() { // Fifth Call
     console.log(this.name + " - ngAfterViewInit");
+    console.log("ngAfterViewInit is only called after all view of the page is load (included its components).");
     this.newEvent("ngAfterViewInit");
   }
 
   ngOnDestroy() {
     console.log(this.name + " - ngOnDestroy");
+    console.log("ngOnDestroy is called when the component is destroy, in other words, when it's removed from an array or a condition");
     this.newEvent("ngOnDestroy");
+    clearInterval(this.intervalRef);
   }
 
   newEvent(name: string) {

@@ -22,14 +22,14 @@ export class MainLifecycleComponent implements OnInit {
   randomNumber!: number;
 
   constructor() {
-    this.randomNumber = this.generateRandomNumber();
+   this.generateRandomNumber();
   }
 
   ngOnInit(): void {
   }
 
-  generateRandomNumber(): number {
-    return Math.round(Math.random()*1000);
+  generateRandomNumber() {
+    this.randomNumber = Math.round(Math.random()*1000);
   }
 
   save() {
