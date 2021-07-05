@@ -9,6 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatSelectModule } from '@angular/material/select';
 import { BrowserModule } from '@angular/platform-browser';
+import { ChildChildComponent } from './main-lifecycle/lifecycle-child/child-child/child-child.component';
 import { LifecycleChildComponent } from './main-lifecycle/lifecycle-child/lifecycle-child.component';
 import { MainLifecycleComponent } from './main-lifecycle/main-lifecycle.component';
 
@@ -17,6 +18,7 @@ import { MainLifecycleComponent } from './main-lifecycle/main-lifecycle.componen
   declarations: [
     MainLifecycleComponent,
     LifecycleChildComponent,
+    ChildChildComponent
   ],
   imports: [
     BrowserModule,

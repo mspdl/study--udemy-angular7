@@ -50,6 +50,7 @@ export class LifecycleChildComponent implements OnInit, OnDestroy, OnChanges, Af
 
   ngAfterContentInit() { // Fourth Call
     console.log(this.name + " - ngAfterContentInit");
+    console.log("ngAfterContentInit is good for validate what's called inside the component, in the parent call.");
     this.newEvent("ngAfterContentInit");
   }
 

@@ -19,9 +19,17 @@ export class MainLifecycleComponent implements OnInit {
 
   editedClientId: number = -1;
 
-  constructor() { }
+  randomNumber!: number;
+
+  constructor() {
+    this.randomNumber = this.generateRandomNumber();
+  }
 
   ngOnInit(): void {
+  }
+
+  generateRandomNumber(): number {
+    return Math.round(Math.random()*1000);
   }
 
   save() {
