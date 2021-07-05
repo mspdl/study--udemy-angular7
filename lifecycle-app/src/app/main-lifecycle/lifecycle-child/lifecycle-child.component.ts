@@ -44,6 +44,7 @@ export class LifecycleChildComponent implements OnInit, OnDestroy, OnChanges, Af
 
   ngOnInit() { // Third Call
     console.log(this.name + " - ngOnInit");
+    console.log("ngOnInit is the first method for @Inputs and it's better for validation. It's the method called for a parent component.")
     this.newEvent("ngOnInit");
   }
 
