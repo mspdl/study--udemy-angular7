@@ -8,39 +8,39 @@ import { Component, OnInit } from '@angular/core';
 export class ChildComponent implements OnInit {
 
   constructor() {
-    console.log("constructor");
+    console.log(" --- CheckChild - constructor");
   }
 
   ngOnInit() {
-    console.log("ngOnInit");
+    console.log(" --- CheckChild - ngOnInit");
   }
 
   ngOnChanges() {
-    console.log("ngOnChanges");
+    console.log(" --- CheckChild - ngOnChanges");
   }
 
   ngDoCheck() {
-    console.log("ngDoCheck");
+    console.log(" --- CheckChild - ngDoCheck");
   }
 
   ngAfterContentInit() {
-    console.log("ngAfterContentInit");
+    console.log(" --- CheckChild - ngAfterContentInit");
   }
 
   ngAfterContentChecked() {
-    console.log("ngAfterContentChecked");
+    console.log(" --- CheckChild - ngAfterContentChecked");
   }
 
   ngAfterViewInit() {
-    console.log("ngAfterViewInit");
+    console.log(" --- CheckChild - ngAfterViewInit");
   }
 
   ngAfterViewChecked() {
-    console.log("ngAfterViewChecked");
+    console.log(" --- CheckChild - ngAfterViewChecked");
   }
 
   ngOnDestroy() {
-    console.log("ngOnDestroy");
+    console.log(" --- CheckChild - ngOnDestroy");
   }
 
 }

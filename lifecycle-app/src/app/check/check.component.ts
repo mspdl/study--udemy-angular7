@@ -11,39 +11,39 @@ export class CheckComponent implements OnInit {
   age!: number | undefined;
 
   constructor() {
-    console.log(" --- CheckChild - constructor");
+    console.log("constructor");
   }
 
   ngOnInit() {
-    console.log(" --- CheckChild - ngOnInit");
+    console.log("ngOnInit");
   }
 
   ngOnChanges() {
-    console.log(" --- CheckChild - ngOnChanges");
+    console.log("ngOnChanges");
   }
 
   ngDoCheck() {
-    console.log(" --- CheckChild - ngDoCheck");
+    console.log("ngDoCheck");
   }
 
   ngAfterContentInit() {
-    console.log(" --- CheckChild - ngAfterContentInit");
+    console.log("ngAfterContentInit");
   }
 
   ngAfterContentChecked() {
-    console.log(" --- CheckChild - ngAfterContentChecked");
+    console.log("ngAfterContentChecked");
   }
 
   ngAfterViewInit() {
-    console.log(" --- CheckChild - ngAfterViewInit");
+    console.log("ngAfterViewInit");
   }
 
   ngAfterViewChecked() {
-    console.log(" --- CheckChild - ngAfterViewChecked");
+    console.log("ngAfterViewChecked");
   }
 
   ngOnDestroy() {
-    console.log(" --- CheckChild - ngOnDestroy");
+    console.log("ngOnDestroy");
   }
 
 }
